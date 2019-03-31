@@ -1,0 +1,82 @@
+{% load static %}
+{% load widget_tweaks %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Video summarizer </title>
+    <link rel='stylesheet prefetch' href="{% static "videoSummarizer/css/bulma.css" %}">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <style>
+    .form-start {
+        margin-top : 30px;
+    }
+    .submit-button {
+        margin-top: 20px;
+    }
+    .navbar-item{
+        padding : 20px;
+    }
+    .combineSection{
+        margin-top : 3%;
+        margin-left : 5%;
+        margin-right : 5%;
+    }
+    .diffMethods{
+        margin-left : 15%;
+        margin-right : 15%;
+        color : #2B7CF0;
+    }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+</head>
+<body>
+    <!-- Navbar start  -->
+    <section class="navbar-menu hero is-dark">
+    <div class="navbar-start">
+        <div class="navbar-item hero-body">
+            <div class="container">
+                <h1 class="title">
+                  Amadeus
+
+                </h1>
+                <h2 class="subtitle">
+Video summarizer
+                </h2>
+            </div>
+        </div>
+    </div>
+
+    <div class="dwld-url">
+    <center>
+    {% ifequal best "none" %}
+    {% else %}
+    <h2> {{best}} have more contribution in the summarized video and {{worst}} have the least contribution amomg all </h2>
+    {% endifequal %}
+    <h1> Click to download the summarized video </h1>
+
+    <div class="dwldButton">
+    <a href=".{{videoURL}}" class="button is-success is-rounded is-large is-focused" download="summarizedVideo.mp4" target="_blank">
+    Download video
+    </a>
+    <a href=".{{subURL}}" class="button is-success is-rounded is-large is-focused" download="summarizedVideo.srt" target="_blank">
+      Download subtitle
+      </a>
+    </div>
+    </center>
+    </div>
+
+    <div class="foot">
+    <footer class="footer">
+        <div class="content has-text-centered">
+          <p>
+
+          </p>
+        </div>
+    </footer>
+    <div>
+</body>
+</html>
